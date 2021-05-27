@@ -10,14 +10,22 @@ const EightBall = (props) => {
   const shakeBall = () => {
     setAnswer(props.options[genRandom()]);
   };
+  const resetBall = () => {
+    setAnswer({ msg: "Think of a Question", color: "black" });
+  };
   return (
-    <div
-      style={{ backgroundColor: answer.color }}
-      className="EightBall"
-      onClick={shakeBall}
-    >
-      <span className="EightBall-msg">{answer.msg}</span>
-    </div>
+    <>
+      <div
+        style={{ backgroundColor: answer.color }}
+        className="EightBall"
+        onClick={shakeBall}
+      >
+        <span className="EightBall-msg">{answer.msg}</span>
+      </div>
+      <div>
+        <button onClick={resetBall}>Reset</button>
+      </div>
+    </>
   );
 };
 
